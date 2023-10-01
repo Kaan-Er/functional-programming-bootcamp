@@ -7,6 +7,11 @@ public class Practise3 {
     public int sumsSquares(List<Integer> numbers) {
         // TODO: implement method that accepts list of integers and returns sum of their squares.
 
-        return 0;
+        List<Integer> squares = numbers.stream()
+                .map(number -> number * number)
+                .toList();
+
+        return squares.stream()
+                .reduce(0, Integer::sum);
     }
 }
